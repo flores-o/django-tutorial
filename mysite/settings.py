@@ -20,14 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# Ensure secrets.py file is in the parent directory
+# Ensure secret_keys.py file is in the parent directory
 
-secrets_file = BASE_DIR / 'secrets.py'
-if secrets_file.exists():
-    sys.path.append(str(secrets_file.parent))
-    from secrets import SECRET_KEY
+secret_keys_file = BASE_DIR / 'secret_keys.py'
+if secret_keys_file.exists():
+    sys.path.append(str(secret_keys_file.parent))
+    from secret_keys import SECRET_KEY
 else:
-    raise Exception("No secrets.py file found!")
+    raise Exception("No secret_keys.py file found!")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
